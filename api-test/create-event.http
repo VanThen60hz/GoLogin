@@ -1,0 +1,9 @@
+POST http://localhost:8080/events
+Content-Type: application/json
+
+{
+  "name": "Birthday Party",
+  "description": "John's 30th birthday celebration",
+  "location": "123 Main Street, Cityville",
+  "dateTime": "2024-03-20T18:00:00Z"
+}
