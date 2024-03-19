@@ -44,14 +44,13 @@ func GetAllEvents() ([]Event, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	defer rows.Close()
 
 	var events []Event
 
 	for rows.Next() {
 		var event Event
-		err := rows.Scan(&event.ID, &event.Name, &event.Location, &event.DateTime, &event.UserID)
+		err := rows.Scan(&event.ID, &event.Name, &event.Description, &event.Location, &event.DateTime, &event.UserID)
 		if err != nil {
 			return nil, err
 		}
