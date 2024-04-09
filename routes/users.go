@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"fmt"
 	"net/http"
 
 	"GoLogin/models"
@@ -38,5 +37,16 @@ func login(context *gin.Context) {
 		return
 	}
 
-	fmt.Print("unable github")
+	err = user.ValidateCredentials()
+	if err != nil {
+		context.JSON(http.StatusUnauthorized, gin.H{
+			"message": "Could not authentication user.",
+		})
+
+		return
+	}
+
+	context.JSON(http.StatusOK, gin.H{
+		"message": "Login successfully!",
+	})
 }
