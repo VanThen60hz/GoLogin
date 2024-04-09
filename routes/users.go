@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"fmt"
 	"net/http"
 
 	"GoLogin/models"
@@ -36,4 +37,6 @@ func login(context *gin.Context) {
 		context.JSON(http.StatusBadRequest, gin.H{"message": "Could not parse request data."})
 		return
 	}
+
+	fmt.Print("unable github")
 }
