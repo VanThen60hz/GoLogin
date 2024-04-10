@@ -32,9 +32,9 @@ func (u User) Save() error {
 		return err
 	}
 
-	userId, err := result.LastInsertId()
+	_, err = result.LastInsertId()
 
-	u.ID = userId
+	// u.ID = userId
 	return err
 }
 
@@ -45,13 +45,13 @@ func (u User) ValidateCredentials() error {
 	var retrievedPassword string
 	err := row.Scan(&u.ID, &retrievedPassword)
 	if err != nil {
-		return errors.New("Credentials invalid")
+		return errors.New("credentials invalid")
 	}
 
 	passwordIsValid := utils.CheckPasswordHash(u.Password, retrievedPassword)
 
 	if !passwordIsValid {
-		return errors.New("Credentials invalid")
+		return errors.New("credentials invalid")
 	}
 
 	return nil
