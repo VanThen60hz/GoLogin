@@ -1,9 +1,9 @@
 POST http://localhost:8080/events
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJleHAiOjE3MTI5Mjg2MjgsInVzZXJJZCI6MH0.CQQPF18SllJVRdvVZD-qFsCL_gRjCAMwqgfw3GPtXRc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGV4YW1wbGUuY29tIiwiZXhwIjoxNzEzMjA2ODk0LCJ1c2VySWQiOjJ9.YBU6_QSrHvQvDlQxN6BAEkQS3749gzqZqIR_BWHsGio
 
 {
-  "name": "Test event 2",
+  "name": "Test event",
   "description": "Another test event",
   "location": "123 Main Street, Cityville",
   "dateTime": "2024-03-20T18:00:00Z"
